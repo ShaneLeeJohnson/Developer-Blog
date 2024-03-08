@@ -1,0 +1,12 @@
+<h1>Welcome to the Developer Blog!</h1>
+
+{{#if posts}}
+<h2>Latest Posts</h2>
+<ul>
+    {{#each posts}}
+    <li><a href="/posts/{{this.id}}">{{this.title}}</a>({{this.createdAt}})</li>
+    {{/each}}
+</ul>
+{{else}}
+<p>There are no posts yet.</p>
+{{/if}}
