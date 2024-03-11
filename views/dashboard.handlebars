@@ -1,1 +1,14 @@
-<h1>Welcome to the dashboard!</h1>
+<h1>Welcome to the dashboard, {{user.username}}!</h1>
+
+{{#if user.posts}}
+<h2>Your Posts</h2>
+<ul>
+    {{#each user.posts}}
+    <li><a href="/posts/{{this.id}}">{{this.title}}</a></li>
+    {{/each}}
+</ul>
+{{else}}
+<p>You haven't created any posts yet.</p>
+{{/if}}
+
+<a href="/post">Create a New Post</a>
